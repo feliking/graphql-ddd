@@ -1,0 +1,37 @@
+# Escalar tipo Fecha
+# scalar JSON
+
+# Entidades del sistema
+type Tarea {
+  # ID del Entidad
+  id: ID!
+  # nombre de Tarea
+  nombre: String!
+  # realizado de la tarea
+  realizado: String
+  # Usuario que creo el registro
+  _user_created: Int
+  # Usuario que actualizó el registro
+  _user_updated: Int
+  # Fecha de creación del registro
+  _created_at: Date
+  # Fecha de actualización del registro
+  _updated_at: Date
+}
+# Objeto para crear un Entidad
+input NewTarea {
+  nombre: String!
+  realizado: String
+}
+
+# Objeto para editar un Entidad
+input EditTarea {
+  nombre: String
+  realizado: String
+}
+
+# Objeto de paginación para Entidad
+type Tareas {
+  count: Int
+  rows: [Tarea]
+}
